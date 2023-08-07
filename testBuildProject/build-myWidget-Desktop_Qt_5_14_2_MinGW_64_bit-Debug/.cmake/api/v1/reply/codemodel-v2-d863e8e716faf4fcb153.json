@@ -1,0 +1,69 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "myWidget",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "myWidget::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-myWidget-Debug-1785f043bcb413ed240c.json",
+					"name" : "myWidget",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "myWidget_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-myWidget_autogen-Debug-b8a633348c56bda91d3d.json",
+					"name" : "myWidget_autogen",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Testspace/qt/testBuildProject/build-myWidget-Desktop_Qt_5_14_2_MinGW_64_bit-Debug",
+		"source" : "D:/Testspace/qt/testBuildProject/myWidget"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}

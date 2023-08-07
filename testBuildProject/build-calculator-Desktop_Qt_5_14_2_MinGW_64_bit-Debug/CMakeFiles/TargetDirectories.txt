@@ -1,0 +1,4 @@
+D:/Testspace/qt/testBuildProject/build-calculator-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/CMakeFiles/calculator.dir
+D:/Testspace/qt/testBuildProject/build-calculator-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+D:/Testspace/qt/testBuildProject/build-calculator-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+D:/Testspace/qt/testBuildProject/build-calculator-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/CMakeFiles/calculator_autogen.dir

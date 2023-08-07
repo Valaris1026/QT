@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+f52278dee7794f3ac70dbfb0670eb0b2 CMakeFiles/myWidget_autogen
+697b66f182589e977ce39c39a9ae6f30 D:/Testspace/qt/testBuildProject/myWidget/myWidget_zh_CN.ts

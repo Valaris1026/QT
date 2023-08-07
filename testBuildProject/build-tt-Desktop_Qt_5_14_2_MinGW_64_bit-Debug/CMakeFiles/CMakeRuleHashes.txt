@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+dbfca4dc4eaf02f556d396a9f3f0ee10 CMakeFiles/tt_autogen
+784e32712df2f7e776d04377bfbe47df D:/Testspace/qt/testBuildProject/tt/tt_zh_CN.ts

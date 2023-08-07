@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\qtimer2.dir/objects.a
+C:\MySoft\QtIDE\Tools\mingw730_64\bin\ar.exe qc CMakeFiles\qtimer2.dir/objects.a @CMakeFiles\qtimer2.dir\objects1.rsp
+C:\MySoft\QtIDE\Tools\mingw730_64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\qtimer2.dir/objects.a -Wl,--no-whole-archive -o qtimer2.exe -Wl,--out-implib,libqtimer2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\qtimer2.dir\linkLibs.rsp

@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+f012ff9cff6d7a166772ada1f76a822c CMakeFiles/calculator_autogen
+10e1be1480f55253a04c4876d51c8a68 D:/Testspace/qt/testBuildProject/calculator/calculator_zh_CN.ts

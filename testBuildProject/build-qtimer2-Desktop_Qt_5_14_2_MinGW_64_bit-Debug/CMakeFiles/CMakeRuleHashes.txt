@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+baa04580791105d753f07534873a06dc CMakeFiles/qtimer2_autogen
+94583d5697952daa81676256051f0812 D:/Testspace/qt/testBuildProject/qtimer2/qtimer2_zh_CN.ts
