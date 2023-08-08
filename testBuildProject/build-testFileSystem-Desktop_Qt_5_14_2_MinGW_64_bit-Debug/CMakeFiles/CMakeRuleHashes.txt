@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+4665063fd2dc68e01b54238eea101dd2 CMakeFiles/testFileSystem_autogen
+0a79616d144fb7d6a0446f264fab1406 D:/Testspace/qt/QT/testBuildProject/testFileSystem/testFileSystem_zh_CN.ts

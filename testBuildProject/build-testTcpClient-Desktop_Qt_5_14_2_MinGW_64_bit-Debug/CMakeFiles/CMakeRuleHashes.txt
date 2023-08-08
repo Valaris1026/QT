@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+e08167f3fd6c89737dbfe03d25e85028 CMakeFiles/testTcpClient_autogen
+be1516666baa32b871d05684234c8dbd D:/Testspace/qt/QT/testBuildProject/testTcpClient/testTcpClient_zh_CN.ts

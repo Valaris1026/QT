@@ -1,0 +1,4 @@
+D:/Testspace/qt/QT/testBuildProject/build-testFileSystem-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/CMakeFiles/testFileSystem.dir
+D:/Testspace/qt/QT/testBuildProject/build-testFileSystem-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+D:/Testspace/qt/QT/testBuildProject/build-testFileSystem-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+D:/Testspace/qt/QT/testBuildProject/build-testFileSystem-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/CMakeFiles/testFileSystem_autogen.dir

@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\testTcpClient.dir/objects.a
+C:\MySoft\QtIDE\Tools\mingw730_64\bin\ar.exe qc CMakeFiles\testTcpClient.dir/objects.a @CMakeFiles\testTcpClient.dir\objects1.rsp
+C:\MySoft\QtIDE\Tools\mingw730_64\bin\g++.exe -g -mwindows -Wl,--whole-archive CMakeFiles\testTcpClient.dir/objects.a -Wl,--no-whole-archive -o testTcpClient.exe -Wl,--out-implib,libtestTcpClient.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\testTcpClient.dir\linkLibs.rsp

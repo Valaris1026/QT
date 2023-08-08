@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\testFileSystem.dir/objects.a
+C:\MySoft\QtIDE\Tools\mingw730_64\bin\ar.exe qc CMakeFiles\testFileSystem.dir/objects.a @CMakeFiles\testFileSystem.dir\objects1.rsp
+C:\MySoft\QtIDE\Tools\mingw730_64\bin\g++.exe -g -mwindows -Wl,--whole-archive CMakeFiles\testFileSystem.dir/objects.a -Wl,--no-whole-archive -o testFileSystem.exe -Wl,--out-implib,libtestFileSystem.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\testFileSystem.dir\linkLibs.rsp
