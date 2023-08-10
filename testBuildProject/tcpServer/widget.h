@@ -24,6 +24,7 @@ public:
 
 private slots:
     void newClientHandler();
+    void threadSlot(QByteArray b);
 //    void tcpRead();
 
     void on_sendButton_clicked();

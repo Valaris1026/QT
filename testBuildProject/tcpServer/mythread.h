@@ -13,6 +13,9 @@ public:
     explicit myThread(QTcpSocket *s);
     void run();
 
+signals:
+    void sendToWidget(QByteArray b);
+
 private slots:
     void readTcpData();
 

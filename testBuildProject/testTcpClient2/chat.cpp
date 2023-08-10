@@ -26,13 +26,13 @@ void Chat::tcpReadData()
     QByteArray tcpData = socket->readAll();
 //    QMessageBox::information(this,"Sever Message",tcpData);
     qDebug()<<tcpData;
-    ui->lineEdit->setText(QString(tcpData)+'\n');
+    ui->lineEdit->setText("QString(tcpData)+'\n'");
 }
 
 void Chat::on_sendButton_clicked()
 {
     QByteArray ba;
-    ba.append(ui->lineEdit->text());
+    ba.append(ui->lineEdit->text().toLocal8Bit());
     socket->write(ba);
 }
 

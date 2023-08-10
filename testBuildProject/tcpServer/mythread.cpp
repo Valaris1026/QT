@@ -14,5 +14,6 @@ void myThread::run()
 void myThread::readTcpData()
 {
     QByteArray tcpData =socket->readAll();
+    emit sendToWidget(tcpData);
     qDebug()<<tcpData;
 }

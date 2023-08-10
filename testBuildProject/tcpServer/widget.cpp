@@ -23,6 +23,7 @@ void Widget::newClientHandler()
 {
     //建立TCP连接
     QTcpSocket *socket = server->nextPendingConnection();
+    mySocket = socket;
     socket->peerAddress();//获取客户端地址
     socket->peerPort();//获取客户端端口号
 
@@ -34,6 +35,7 @@ void Widget::newClientHandler()
     qDebug()<<"newClient creadted";
     myThread *t = new myThread(socket);
     t->start();  //开始线程
+    connect(t,&myThread::sendToWidget,this,&Widget::threadSlot);
 }
 
 //void Widget::tcpRead()
@@ -44,13 +46,17 @@ void Widget::newClientHandler()
 //    ui->msgBoxEdit->setText(QString(tcpData)+'\n');
 //}
 
+void Widget::threadSlot(QByteArray b)
+{
+    ui->msgBoxEdit->setText(QString(b));
+}
 
 
 void Widget::on_sendButton_clicked()
 {
     QByteArray ba;
-    ba.append(ui->msgBoxEdit->text());
+    ba.append(ui->msgBoxEdit->text().toLocal8Bit());
     qDebug()<<ba;
-    mySocket->write(ba);
+    mySocket->write("hello");
 }
 
