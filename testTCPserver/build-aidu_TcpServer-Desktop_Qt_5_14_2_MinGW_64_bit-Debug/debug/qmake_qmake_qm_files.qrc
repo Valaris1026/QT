@@ -1,0 +1,5 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="i18n">
+<file alias="aidu_TcpServer_zh_CN.qm">D:/Workspace/Qt/testTCPserver/build-aidu_TcpServer-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/debug/aidu_TcpServer_zh_CN.qm</file>
+</qresource>
+</RCC>
