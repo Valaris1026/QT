@@ -75,12 +75,14 @@ void MainWindow::on_textMsgSendButton_clicked()
     QByteArray ba;
     ba.append(ui->textMsgSendEdit->text().toLocal8Bit());
     qDebug()<<ba;
+    ba.append("\r\n");
     mySocket->write(ba);
 }
 
 
 void MainWindow::on_clientMsgClearButton_clicked()
 {
+        qDebug()<<sizeof(ADMT);
     ui->clientMsgRcvEdit->clear();
 }
 

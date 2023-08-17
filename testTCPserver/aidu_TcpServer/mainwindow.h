@@ -9,6 +9,8 @@
 #include <mythread.h>
 #include <QNetworkInterface>
 
+#include <admt.h>
+
 #define TCP_PORT 8000
 
 QT_BEGIN_NAMESPACE

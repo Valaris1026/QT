@@ -18,7 +18,6 @@ typedef union
 
 class makePack
 {
-    Q_OBJECT
 public:
     makePack();
     template <typename type>

@@ -9,6 +9,9 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    admt.cpp \
+    admt_channel.cpp \
+    admt_global.cpp \
     aiduprotocol.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -16,6 +19,9 @@ SOURCES += \
     mythread.cpp
 
 HEADERS += \
+    admt.h \
+    admt_channel.h \
+    admt_global.h \
     aiduprotocol.h \
     mainwindow.h \
     makepack.h \
