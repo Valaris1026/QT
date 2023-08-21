@@ -1,0 +1,11 @@
+release/admt.o
+release/admt_channel.o
+release/admt_global.o
+release/aiduprotocol.o
+release/main.o
+release/mainwindow.o
+release/makepack.o
+release/mythread.o
+release/qrc_qmake_qmake_qm_files.o
+release/moc_mainwindow.o
+release/moc_mythread.o
