@@ -6,8 +6,18 @@
 #include <QWidget>
 
 #define MAX_NAME_LEN 100
+#define ADMT_NAME2 "ADHC-JS1N V1.0 \'智能堤防堤坝隐患探测仪\'"
+#define ADMT_TRANSMITTER 1
+#define ADMT_RECEIVER 2
 
-class ADMT_Global
+#define ADMT_DEFAULT_SERIAL_NUM 0xFFFFFFF3
+#define ADMT_DEFAULT_METHOD 0
+#define ADMT_DEFAULT_FILTER 1 // 1-Down filter 2-Up filter
+#define ADMT_DEFAULT_PROBE 2  // 1-Electric probe 2-Magnet probe 3-support both probe
+#define ADMT_SUPPORT_FILTER 1
+#define ADMT_SUPPORT_PROBE 3
+
+class admt_Global
 {
 private:
     char devName[MAX_NAME_LEN];      // 设备名称
@@ -33,8 +43,9 @@ private:
     uint32_t xMeaNeedTime;
     uint8_t batteryPercent; // 电量
     uint8_t wifiStrength;   // wifi信号强度
+    friend class admt;
 public:
-    ADMT_Global();
+    admt_Global();
     const char* getDevName(){return this->devName;}
     uint32_t getDevSerialNum(){return this->devSerialNum;}
     void setDevName(const char *setName){

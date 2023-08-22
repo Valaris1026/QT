@@ -20,6 +20,7 @@ private:
     uint32_t xMeaNeedTime;     // Measurement of down machine require time./ms Down
     uint8_t xMeaStartTime;
     float *data;
+    friend class admt;
 public:
     admt_Channel();
     int getChannelNo(){return this->xChNo;}

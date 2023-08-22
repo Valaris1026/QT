@@ -1,8 +1,11 @@
 #include "mythread.h"
+#include "admt.h"
+#include "aiduprotocol.h"
 
 mythread::mythread(QTcpSocket *s)
 {
     socket =s;
+    this->aiduComm.setSocket(this->socket);
 }
 
 void mythread::run()
@@ -14,6 +17,7 @@ void mythread::run()
 void mythread::readTcpData()
 {
     QByteArray tcpData =socket->readAll();
-    emit sendToWidget(tcpData);
+    emit sendToWindow(tcpData);
     qDebug()<<tcpData;
+    this->aiduComm.rxMsg((uint8_t*)tcpData.data(),tcpData.size(),&this->myAdmt);
 }

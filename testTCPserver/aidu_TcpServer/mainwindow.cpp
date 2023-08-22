@@ -62,7 +62,7 @@ void MainWindow::newClientHandler()
     qDebug()<<"newClient creadted";
     mythread *t = new mythread(socket);
     t->start();  //开始线程
-    connect(t,&mythread::sendToWidget,this,&MainWindow::threadSlot);
+    connect(t,&mythread::sendToWindow,this,&MainWindow::threadSlot);
 }
 
 void MainWindow::threadSlot(QByteArray b)
@@ -82,7 +82,6 @@ void MainWindow::on_textMsgSendButton_clicked()
 
 void MainWindow::on_clientMsgClearButton_clicked()
 {
-        qDebug()<<sizeof(ADMT);
     ui->clientMsgRcvEdit->clear();
 }
 

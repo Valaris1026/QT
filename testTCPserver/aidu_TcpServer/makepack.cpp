@@ -4,105 +4,80 @@ makePack::makePack()
 {
 
 }
-/**
- * @brief add2Pack
- * @param vec
- * @param param
- */
-template <typename type>
-void add2Pack(std::vector<uint8_t> *vec, type param)
+
+uint16_t makePack::crcCheck(uint8_t *ptr, uint32_t len, uint16_t *CRC16Temp)
 {
-    switch (sizeof(param))
+    unsigned int i;
+    unsigned short j, tmp;
+
+    for (i = 0; i < len; i++)
     {
-    case 1:
-    {
-        vec->push_back(param);
+        *CRC16Temp = (*ptr) ^ (*CRC16Temp);
+
+        for (j = 0; j < 8; j++)
+        {
+            tmp = *CRC16Temp & 0x0001;
+            *CRC16Temp = *CRC16Temp >> 1;
+
+            if (tmp)
+            {
+                *CRC16Temp = *CRC16Temp ^ 0xa001;
+            }
+        }
+
+        ptr++;
     }
-    break;
-    case 2:
-    {
-        uint8_t Temp1 = param >> 8;
-        uint8_t Temp2 = (param << 8) >> 8;
-        vec->push_back(Temp1);
-        vec->push_back(Temp2);
-    }
-    break;
-    case 4:
-    {
-        uint8_t fTemp1 = (param >> 24);
-        uint8_t fTemp2 = (param << 8) >> 24;
-        uint8_t fTemp3 = (param << 16) >> 24;
-        uint8_t fTemp4 = (param << 24) >> 24;
-        vec->push_back(fTemp1);
-        vec->push_back(fTemp2);
-        vec->push_back(fTemp3);
-        vec->push_back(fTemp4);
-    }
-    break;
-    }
+
+    return (*CRC16Temp);
 }
-/**
- * @brief add2Pack
- * @param vec
- * @param param
- */
-void add2Pack(std::vector<uint8_t> *vec, float param)
+
+uint16_t makePack::crcCheck(std::vector<uint8_t> vec, uint32_t len, uint16_t *CRC16Temp)
 {
-    Float2U8 flo;
-    flo.f = param;
-    vec->push_back(flo.u8[3]);
-    vec->push_back(flo.u8[2]);
-    vec->push_back(flo.u8[1]);
-    vec->push_back(flo.u8[0]);
-}
-/**
- * @brief add2Pack
- * @param vec
- * @param param
- */
-void add2Pack(std::vector<uint8_t> *vec, double param)
-{
-    Double2U8 doub;
-    doub.d = param;
-    vec->push_back(doub.u8[7]);
-    vec->push_back(doub.u8[6]);
-    vec->push_back(doub.u8[5]);
-    vec->push_back(doub.u8[4]);
-    vec->push_back(doub.u8[3]);
-    vec->push_back(doub.u8[2]);
-    vec->push_back(doub.u8[1]);
-    vec->push_back(doub.u8[0]);
-}
-/**
- * @brief addArray
- * @param vec
- * @param param
- * @param len
- */
-template <typename type, typename type2>
-void addArray(std::vector<uint8_t> *vec, type *param, type2 len)
-{
-    uint8_t *p = nullptr;
-    p = (uint8_t *)param;
-    for (int i = 0; i < len; ++i)
+    unsigned int i;
+    unsigned short j, tmp;
+
+    for (i = 0; i < len; i++)
     {
-        vec->push_back(p[i]);
+        *CRC16Temp = vec[i] ^ *CRC16Temp;
+
+        for (j = 0; j < 8; j++)
+        {
+            tmp = *CRC16Temp & 0x0001;
+            *CRC16Temp = *CRC16Temp >> 1;
+
+            if (tmp)
+            {
+                *CRC16Temp = *CRC16Temp ^ 0xa001;
+            }
+        }
     }
+
+    return (*CRC16Temp);
 }
-/**
- * @brief addHead
- * @param vec
- * @param param
- */
-template <typename type>
-void addHead(std::vector<uint8_t> *vec, type *param)
+
+uint32_t makePack::getByte2Int(uint8_t *buf)
 {
-    uint8_t *p = nullptr;
-    p = (uint8_t *)param;
-    for (int i = 0; i < sizeof(type); ++i)
-    {
-        vec->push_back(p[i]);
-    }
+    uint32_t ret = 0;
+    ret = buf[3] | (buf[2] << 8) | (buf[1] << 16) | (buf[0] << 24);
+    return ret;
+}
+
+uint16_t makePack::getByte2ShortInt(uint8_t *buf)
+{
+    uint16_t ret = 0;
+    ret = buf[0] << 8 | (buf[1] );
+    return ret;
+}
+
+float makePack::getByte2FloatBigEndian(uint8_t *buf)
+{
+    FloatNInt2U8 f2u8;
+    f2u8.u8[0] = buf[3];
+    f2u8.u8[1] = buf[2];
+    f2u8.u8[2] = buf[1];
+    f2u8.u8[3] = buf[0];
+
+    return f2u8.f;
 }
 
 

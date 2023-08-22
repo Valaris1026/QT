@@ -4,16 +4,20 @@
 #include <QMainWindow>
 #include <QObject>
 #include <QWidget>
+#include <QDebug>
+#include <admt_global.h>
+#include <admt_channel.h>
 
-
-
-class ADMT
+class admt
 {
 private:
 
 public:
-    ADMT();
-
+    admt();
+    admt_Global global;
+    admt_Channel *channel;
+//    friend class admt_Channel;
+//    friend class admt_Global;
 };
 
 #endif // ADMT_H

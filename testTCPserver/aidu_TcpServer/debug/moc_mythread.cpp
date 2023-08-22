@@ -33,13 +33,13 @@ struct qt_meta_stringdata_mythread_t {
 static const qt_meta_stringdata_mythread_t qt_meta_stringdata_mythread = {
     {
 QT_MOC_LITERAL(0, 0, 8), // "mythread"
-QT_MOC_LITERAL(1, 9, 12), // "sendToWidget"
+QT_MOC_LITERAL(1, 9, 12), // "sendToWindow"
 QT_MOC_LITERAL(2, 22, 0), // ""
 QT_MOC_LITERAL(3, 23, 1), // "b"
 QT_MOC_LITERAL(4, 25, 11) // "readTcpData"
 
     },
-    "mythread\0sendToWidget\0\0b\0readTcpData"
+    "mythread\0sendToWindow\0\0b\0readTcpData"
 };
 #undef QT_MOC_LITERAL
 
@@ -77,7 +77,7 @@ void mythread::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         auto *_t = static_cast<mythread *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->sendToWidget((*reinterpret_cast< QByteArray(*)>(_a[1]))); break;
+        case 0: _t->sendToWindow((*reinterpret_cast< QByteArray(*)>(_a[1]))); break;
         case 1: _t->readTcpData(); break;
         default: ;
         }
@@ -85,7 +85,7 @@ void mythread::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         int *result = reinterpret_cast<int *>(_a[0]);
         {
             using _t = void (mythread::*)(QByteArray );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&mythread::sendToWidget)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&mythread::sendToWindow)) {
                 *result = 0;
                 return;
             }
@@ -134,7 +134,7 @@ int mythread::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void mythread::sendToWidget(QByteArray _t1)
+void mythread::sendToWindow(QByteArray _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);

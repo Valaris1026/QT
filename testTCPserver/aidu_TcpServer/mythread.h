@@ -5,6 +5,7 @@
 #include <QThread>
 #include <QTcpSocket>
 #include <QDebug>
+#include "aiduprotocol.h"
 
 class mythread:public QThread
 {
@@ -14,14 +15,15 @@ public:
     void run();
 
 signals:
-    void sendToWidget(QByteArray b);
+    void sendToWindow(QByteArray b);
 
 private slots:
     void readTcpData();
 
 private:
     QTcpSocket *socket;
-
+    aiduProtocol aiduComm;
+    admt myAdmt;
 signals:
 };
 
