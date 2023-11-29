@@ -67,7 +67,7 @@ void MainWindow::newClientHandler()
 
 void MainWindow::threadSlot(QByteArray b)
 {
-    ui->clientMsgRcvEdit->setText(QString(b));
+    ui->clientMsgRcvEdit->setText(QString(b.toHex()));
 }
 
 void MainWindow::on_textMsgSendButton_clicked()

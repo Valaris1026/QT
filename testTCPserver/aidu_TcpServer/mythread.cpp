@@ -19,5 +19,5 @@ void mythread::readTcpData()
     QByteArray tcpData =socket->readAll();
     emit sendToWindow(tcpData);
     qDebug()<<tcpData;
-    this->aiduComm.rxMsg((uint8_t*)tcpData.data(),tcpData.size(),&this->myAdmt);
+    this->aiduComm.rxMsg((uint8_t*)tcpData.data(),tcpData.size()-2,&this->myAdmt);
 }

@@ -11,11 +11,12 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -23,19 +24,20 @@ QT_BEGIN_NAMESPACE
 class Ui_Widget
 {
 public:
-    QLabel *label;
+    QLabel *Title;
     QPushButton *sendButton;
     QLineEdit *msgBoxEdit;
+    QComboBox *serverBox;
+    QPushButton *refresButton;
     QWidget *widget;
-    QVBoxLayout *verticalLayout;
-    QLabel *label_3;
+    QGridLayout *gridLayout;
+    QLabel *serverAddress;
+    QLabel *clientPort;
+    QSpacerItem *verticalSpacer_3;
+    QLabel *clientAddress;
     QSpacerItem *verticalSpacer;
-    QLabel *label_2;
-    QWidget *widget1;
-    QVBoxLayout *verticalLayout_2;
-    QLineEdit *ipEdit;
-    QSpacerItem *verticalSpacer_2;
-    QLineEdit *portEdit;
+    QComboBox *clientPortBox;
+    QComboBox *clientAddrBox;
 
     void setupUi(QWidget *Widget)
     {
@@ -45,60 +47,69 @@ public:
         QFont font;
         font.setPointSize(15);
         Widget->setFont(font);
-        label = new QLabel(Widget);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(280, 60, 171, 41));
+        Title = new QLabel(Widget);
+        Title->setObjectName(QString::fromUtf8("Title"));
+        Title->setGeometry(QRect(300, 10, 171, 41));
         QFont font1;
         font1.setPointSize(20);
-        label->setFont(font1);
+        Title->setFont(font1);
         sendButton = new QPushButton(Widget);
         sendButton->setObjectName(QString::fromUtf8("sendButton"));
         sendButton->setGeometry(QRect(590, 270, 111, 41));
         msgBoxEdit = new QLineEdit(Widget);
         msgBoxEdit->setObjectName(QString::fromUtf8("msgBoxEdit"));
         msgBoxEdit->setGeometry(QRect(150, 270, 431, 311));
+        serverBox = new QComboBox(Widget);
+        serverBox->setObjectName(QString::fromUtf8("serverBox"));
+        serverBox->setGeometry(QRect(330, 70, 181, 41));
+        QFont font2;
+        font2.setPointSize(10);
+        serverBox->setFont(font2);
+        refresButton = new QPushButton(Widget);
+        refresButton->setObjectName(QString::fromUtf8("refresButton"));
+        refresButton->setGeometry(QRect(600, 220, 93, 31));
+        refresButton->setFont(font2);
         widget = new QWidget(Widget);
         widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(150, 160, 137, 91));
-        verticalLayout = new QVBoxLayout(widget);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        label_3 = new QLabel(widget);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setFont(font);
+        widget->setGeometry(QRect(180, 70, 141, 161));
+        gridLayout = new QGridLayout(widget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        serverAddress = new QLabel(widget);
+        serverAddress->setObjectName(QString::fromUtf8("serverAddress"));
+        serverAddress->setFont(font);
 
-        verticalLayout->addWidget(label_3);
+        gridLayout->addWidget(serverAddress, 0, 0, 1, 1);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        clientPort = new QLabel(widget);
+        clientPort->setObjectName(QString::fromUtf8("clientPort"));
+        clientPort->setFont(font);
 
-        verticalLayout->addItem(verticalSpacer);
+        gridLayout->addWidget(clientPort, 4, 0, 1, 1);
 
-        label_2 = new QLabel(widget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setFont(font);
+        verticalSpacer_3 = new QSpacerItem(132, 13, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        verticalLayout->addWidget(label_2);
+        gridLayout->addItem(verticalSpacer_3, 3, 0, 1, 1);
 
-        widget1 = new QWidget(Widget);
-        widget1->setObjectName(QString::fromUtf8("widget1"));
-        widget1->setGeometry(QRect(300, 160, 173, 91));
-        verticalLayout_2 = new QVBoxLayout(widget1);
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        ipEdit = new QLineEdit(widget1);
-        ipEdit->setObjectName(QString::fromUtf8("ipEdit"));
+        clientAddress = new QLabel(widget);
+        clientAddress->setObjectName(QString::fromUtf8("clientAddress"));
+        clientAddress->setFont(font);
 
-        verticalLayout_2->addWidget(ipEdit);
+        gridLayout->addWidget(clientAddress, 2, 0, 1, 1);
 
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer = new QSpacerItem(132, 13, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        verticalLayout_2->addItem(verticalSpacer_2);
+        gridLayout->addItem(verticalSpacer, 1, 0, 1, 1);
 
-        portEdit = new QLineEdit(widget1);
-        portEdit->setObjectName(QString::fromUtf8("portEdit"));
-
-        verticalLayout_2->addWidget(portEdit);
-
+        clientPortBox = new QComboBox(Widget);
+        clientPortBox->setObjectName(QString::fromUtf8("clientPortBox"));
+        clientPortBox->setGeometry(QRect(330, 190, 181, 41));
+        clientAddrBox = new QComboBox(Widget);
+        clientAddrBox->setObjectName(QString::fromUtf8("clientAddrBox"));
+        clientAddrBox->setGeometry(QRect(330, 133, 181, 41));
+        QWidget::setTabOrder(serverBox, sendButton);
+        QWidget::setTabOrder(sendButton, msgBoxEdit);
+        QWidget::setTabOrder(msgBoxEdit, refresButton);
 
         retranslateUi(Widget);
 
@@ -108,10 +119,12 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QCoreApplication::translate("Widget", "Widget", nullptr));
-        label->setText(QCoreApplication::translate("Widget", "TCP\346\234\215\345\212\241\345\231\250", nullptr));
+        Title->setText(QCoreApplication::translate("Widget", "TCP\346\234\215\345\212\241\345\231\250", nullptr));
         sendButton->setText(QCoreApplication::translate("Widget", "\345\217\221\351\200\201", nullptr));
-        label_3->setText(QCoreApplication::translate("Widget", "\345\256\242\346\210\267\347\253\257\345\234\260\345\235\200", nullptr));
-        label_2->setText(QCoreApplication::translate("Widget", "\345\256\242\346\210\267\347\253\257\347\253\257\345\217\243", nullptr));
+        refresButton->setText(QCoreApplication::translate("Widget", "\345\210\267\346\226\260", nullptr));
+        serverAddress->setText(QCoreApplication::translate("Widget", "\346\234\215\345\212\241\345\231\250\345\234\260\345\235\200", nullptr));
+        clientPort->setText(QCoreApplication::translate("Widget", "\345\256\242\346\210\267\347\253\257\347\253\257\345\217\243", nullptr));
+        clientAddress->setText(QCoreApplication::translate("Widget", "\345\256\242\346\210\267\347\253\257\345\234\260\345\235\200", nullptr));
     } // retranslateUi
 
 };

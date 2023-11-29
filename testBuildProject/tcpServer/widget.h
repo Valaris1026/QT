@@ -4,7 +4,9 @@
 #include <QWidget>
 #include <QTcpServer>
 #include <QTcpSocket>
+#include <QNetworkInterface>
 #include <QMessageBox>
+#include <QComboBox>
 #include <QDebug>
 #include <mythread.h>
 
@@ -28,6 +30,13 @@ private slots:
 //    void tcpRead();
 
     void on_sendButton_clicked();
+
+
+    void on_serverBox_activated(int index);
+
+    void on_refresButton_clicked();
+
+    void on_clientAddrBox_activated(int index);
 
 private:
     Ui::Widget *ui;

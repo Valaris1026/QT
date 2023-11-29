@@ -17,7 +17,8 @@ signals:
     void sendToWidget(QByteArray b);
 
 private slots:
-    void readTcpData();
+    void tcpReadData();
+    void tcpDisconnect();
 
 private:
     QTcpSocket *socket;

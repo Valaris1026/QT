@@ -10,7 +10,7 @@
 #define ADMT_TRANSMITTER 1
 #define ADMT_RECEIVER 2
 
-#define ADMT_DEFAULT_SERIAL_NUM 0xFFFFFFF3
+#define ADMT_DEFAULT_SERIAL_NUM 0xFFFFFFF8
 #define ADMT_DEFAULT_METHOD 0
 #define ADMT_DEFAULT_FILTER 1 // 1-Down filter 2-Up filter
 #define ADMT_DEFAULT_PROBE 2  // 1-Electric probe 2-Magnet probe 3-support both probe

@@ -14,6 +14,7 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -45,21 +46,21 @@ public:
     QLineEdit *portEdit;
     QLineEdit *lineEdit;
     QLabel *label_10;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QLabel *label_3;
     QComboBox *comboBox;
-    QWidget *widget1;
+    QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout_3;
     QLabel *label_8;
     QLineEdit *serverAddressEdit;
     QLabel *label_9;
     QLineEdit *serverPortEdit;
-    QWidget *widget2;
+    QWidget *layoutWidget2;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_22;
     QLineEdit *lineEdit_14;
-    QWidget *widget3;
+    QWidget *layoutWidget3;
     QHBoxLayout *horizontalLayout_3;
     QGridLayout *gridLayout;
     QVBoxLayout *verticalLayout;
@@ -91,6 +92,14 @@ public:
     QLineEdit *lineEdit_11;
     QLineEdit *lineEdit_12;
     QLineEdit *lineEdit_13;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout_4;
+    QVBoxLayout *verticalLayout_8;
+    QLabel *label_23;
+    QLabel *label_24;
+    QVBoxLayout *verticalLayout_7;
+    QLCDNumber *batteryPercentNum;
+    QLCDNumber *wifiStrengthNum;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -133,7 +142,7 @@ public:
         textMsgSendEdit->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         layoutWidget_2 = new QWidget(centralwidget);
         layoutWidget_2->setObjectName(QString::fromUtf8("layoutWidget_2"));
-        layoutWidget_2->setGeometry(QRect(40, 110, 121, 97));
+        layoutWidget_2->setGeometry(QRect(40, 110, 121, 117));
         verticalLayout_2 = new QVBoxLayout(layoutWidget_2);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -170,102 +179,102 @@ public:
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(40, 220, 119, 17));
         label_10->setFont(font2);
-        widget = new QWidget(centralwidget);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(280, 70, 137, 23));
-        horizontalLayout = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(centralwidget);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(280, 70, 171, 28));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        label_3 = new QLabel(widget);
+        label_3 = new QLabel(layoutWidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
         horizontalLayout->addWidget(label_3);
 
-        comboBox = new QComboBox(widget);
+        comboBox = new QComboBox(layoutWidget);
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
 
         horizontalLayout->addWidget(comboBox);
 
-        widget1 = new QWidget(centralwidget);
-        widget1->setObjectName(QString::fromUtf8("widget1"));
-        widget1->setGeometry(QRect(40, 10, 121, 97));
-        verticalLayout_3 = new QVBoxLayout(widget1);
+        layoutWidget1 = new QWidget(centralwidget);
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(40, 10, 121, 117));
+        verticalLayout_3 = new QVBoxLayout(layoutWidget1);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        label_8 = new QLabel(widget1);
+        label_8 = new QLabel(layoutWidget1);
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setFont(font2);
 
         verticalLayout_3->addWidget(label_8);
 
-        serverAddressEdit = new QLineEdit(widget1);
+        serverAddressEdit = new QLineEdit(layoutWidget1);
         serverAddressEdit->setObjectName(QString::fromUtf8("serverAddressEdit"));
 
         verticalLayout_3->addWidget(serverAddressEdit);
 
-        label_9 = new QLabel(widget1);
+        label_9 = new QLabel(layoutWidget1);
         label_9->setObjectName(QString::fromUtf8("label_9"));
         label_9->setFont(font2);
 
         verticalLayout_3->addWidget(label_9);
 
-        serverPortEdit = new QLineEdit(widget1);
+        serverPortEdit = new QLineEdit(layoutWidget1);
         serverPortEdit->setObjectName(QString::fromUtf8("serverPortEdit"));
 
         verticalLayout_3->addWidget(serverPortEdit);
 
-        widget2 = new QWidget(centralwidget);
-        widget2->setObjectName(QString::fromUtf8("widget2"));
-        widget2->setGeometry(QRect(440, 70, 194, 22));
-        horizontalLayout_2 = new QHBoxLayout(widget2);
+        layoutWidget2 = new QWidget(centralwidget);
+        layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(440, 70, 194, 27));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget2);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        label_22 = new QLabel(widget2);
+        label_22 = new QLabel(layoutWidget2);
         label_22->setObjectName(QString::fromUtf8("label_22"));
 
         horizontalLayout_2->addWidget(label_22);
 
-        lineEdit_14 = new QLineEdit(widget2);
+        lineEdit_14 = new QLineEdit(layoutWidget2);
         lineEdit_14->setObjectName(QString::fromUtf8("lineEdit_14"));
 
         horizontalLayout_2->addWidget(lineEdit_14);
 
-        widget3 = new QWidget(centralwidget);
-        widget3->setObjectName(QString::fromUtf8("widget3"));
-        widget3->setGeometry(QRect(530, 130, 443, 161));
-        horizontalLayout_3 = new QHBoxLayout(widget3);
+        layoutWidget3 = new QWidget(centralwidget);
+        layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
+        layoutWidget3->setGeometry(QRect(530, 130, 443, 191));
+        horizontalLayout_3 = new QHBoxLayout(layoutWidget3);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
         gridLayout = new QGridLayout();
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        label_2 = new QLabel(widget3);
+        label_2 = new QLabel(layoutWidget3);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
         verticalLayout->addWidget(label_2);
 
-        label_11 = new QLabel(widget3);
+        label_11 = new QLabel(layoutWidget3);
         label_11->setObjectName(QString::fromUtf8("label_11"));
 
         verticalLayout->addWidget(label_11);
 
-        label_12 = new QLabel(widget3);
+        label_12 = new QLabel(layoutWidget3);
         label_12->setObjectName(QString::fromUtf8("label_12"));
 
         verticalLayout->addWidget(label_12);
 
-        label_14 = new QLabel(widget3);
+        label_14 = new QLabel(layoutWidget3);
         label_14->setObjectName(QString::fromUtf8("label_14"));
 
         verticalLayout->addWidget(label_14);
 
-        label_15 = new QLabel(widget3);
+        label_15 = new QLabel(layoutWidget3);
         label_15->setObjectName(QString::fromUtf8("label_15"));
 
         verticalLayout->addWidget(label_15);
 
-        label_13 = new QLabel(widget3);
+        label_13 = new QLabel(layoutWidget3);
         label_13->setObjectName(QString::fromUtf8("label_13"));
 
         verticalLayout->addWidget(label_13);
@@ -275,32 +284,32 @@ public:
 
         verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        deviceSerialNumberEdit = new QLineEdit(widget3);
+        deviceSerialNumberEdit = new QLineEdit(layoutWidget3);
         deviceSerialNumberEdit->setObjectName(QString::fromUtf8("deviceSerialNumberEdit"));
 
         verticalLayout_4->addWidget(deviceSerialNumberEdit);
 
-        totalChannelNumberEdit = new QLineEdit(widget3);
+        totalChannelNumberEdit = new QLineEdit(layoutWidget3);
         totalChannelNumberEdit->setObjectName(QString::fromUtf8("totalChannelNumberEdit"));
 
         verticalLayout_4->addWidget(totalChannelNumberEdit);
 
-        sampleChannelNumberEdit = new QLineEdit(widget3);
+        sampleChannelNumberEdit = new QLineEdit(layoutWidget3);
         sampleChannelNumberEdit->setObjectName(QString::fromUtf8("sampleChannelNumberEdit"));
 
         verticalLayout_4->addWidget(sampleChannelNumberEdit);
 
-        operateChannelIDEdit = new QLineEdit(widget3);
+        operateChannelIDEdit = new QLineEdit(layoutWidget3);
         operateChannelIDEdit->setObjectName(QString::fromUtf8("operateChannelIDEdit"));
 
         verticalLayout_4->addWidget(operateChannelIDEdit);
 
-        measureMethodEidt = new QLineEdit(widget3);
+        measureMethodEidt = new QLineEdit(layoutWidget3);
         measureMethodEidt->setObjectName(QString::fromUtf8("measureMethodEidt"));
 
         verticalLayout_4->addWidget(measureMethodEidt);
 
-        slaveSampleTypeEdit = new QLineEdit(widget3);
+        slaveSampleTypeEdit = new QLineEdit(layoutWidget3);
         slaveSampleTypeEdit->setObjectName(QString::fromUtf8("slaveSampleTypeEdit"));
 
         verticalLayout_4->addWidget(slaveSampleTypeEdit);
@@ -315,32 +324,32 @@ public:
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         verticalLayout_5 = new QVBoxLayout();
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        label_16 = new QLabel(widget3);
+        label_16 = new QLabel(layoutWidget3);
         label_16->setObjectName(QString::fromUtf8("label_16"));
 
         verticalLayout_5->addWidget(label_16);
 
-        label_17 = new QLabel(widget3);
+        label_17 = new QLabel(layoutWidget3);
         label_17->setObjectName(QString::fromUtf8("label_17"));
 
         verticalLayout_5->addWidget(label_17);
 
-        label_18 = new QLabel(widget3);
+        label_18 = new QLabel(layoutWidget3);
         label_18->setObjectName(QString::fromUtf8("label_18"));
 
         verticalLayout_5->addWidget(label_18);
 
-        label_19 = new QLabel(widget3);
+        label_19 = new QLabel(layoutWidget3);
         label_19->setObjectName(QString::fromUtf8("label_19"));
 
         verticalLayout_5->addWidget(label_19);
 
-        label_20 = new QLabel(widget3);
+        label_20 = new QLabel(layoutWidget3);
         label_20->setObjectName(QString::fromUtf8("label_20"));
 
         verticalLayout_5->addWidget(label_20);
 
-        label_21 = new QLabel(widget3);
+        label_21 = new QLabel(layoutWidget3);
         label_21->setObjectName(QString::fromUtf8("label_21"));
 
         verticalLayout_5->addWidget(label_21);
@@ -350,32 +359,32 @@ public:
 
         verticalLayout_6 = new QVBoxLayout();
         verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
-        commandEdit = new QLineEdit(widget3);
+        commandEdit = new QLineEdit(layoutWidget3);
         commandEdit->setObjectName(QString::fromUtf8("commandEdit"));
 
         verticalLayout_6->addWidget(commandEdit);
 
-        paramByteSizeEdit = new QLineEdit(widget3);
+        paramByteSizeEdit = new QLineEdit(layoutWidget3);
         paramByteSizeEdit->setObjectName(QString::fromUtf8("paramByteSizeEdit"));
 
         verticalLayout_6->addWidget(paramByteSizeEdit);
 
-        lineEdit_10 = new QLineEdit(widget3);
+        lineEdit_10 = new QLineEdit(layoutWidget3);
         lineEdit_10->setObjectName(QString::fromUtf8("lineEdit_10"));
 
         verticalLayout_6->addWidget(lineEdit_10);
 
-        lineEdit_11 = new QLineEdit(widget3);
+        lineEdit_11 = new QLineEdit(layoutWidget3);
         lineEdit_11->setObjectName(QString::fromUtf8("lineEdit_11"));
 
         verticalLayout_6->addWidget(lineEdit_11);
 
-        lineEdit_12 = new QLineEdit(widget3);
+        lineEdit_12 = new QLineEdit(layoutWidget3);
         lineEdit_12->setObjectName(QString::fromUtf8("lineEdit_12"));
 
         verticalLayout_6->addWidget(lineEdit_12);
 
-        lineEdit_13 = new QLineEdit(widget3);
+        lineEdit_13 = new QLineEdit(layoutWidget3);
         lineEdit_13->setObjectName(QString::fromUtf8("lineEdit_13"));
 
         verticalLayout_6->addWidget(lineEdit_13);
@@ -386,10 +395,46 @@ public:
 
         horizontalLayout_3->addLayout(gridLayout_2);
 
+        widget = new QWidget(centralwidget);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(650, 40, 146, 57));
+        horizontalLayout_4 = new QHBoxLayout(widget);
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_8 = new QVBoxLayout();
+        verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
+        label_23 = new QLabel(widget);
+        label_23->setObjectName(QString::fromUtf8("label_23"));
+
+        verticalLayout_8->addWidget(label_23);
+
+        label_24 = new QLabel(widget);
+        label_24->setObjectName(QString::fromUtf8("label_24"));
+
+        verticalLayout_8->addWidget(label_24);
+
+
+        horizontalLayout_4->addLayout(verticalLayout_8);
+
+        verticalLayout_7 = new QVBoxLayout();
+        verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
+        batteryPercentNum = new QLCDNumber(widget);
+        batteryPercentNum->setObjectName(QString::fromUtf8("batteryPercentNum"));
+
+        verticalLayout_7->addWidget(batteryPercentNum);
+
+        wifiStrengthNum = new QLCDNumber(widget);
+        wifiStrengthNum->setObjectName(QString::fromUtf8("wifiStrengthNum"));
+
+        verticalLayout_7->addWidget(wifiStrengthNum);
+
+
+        horizontalLayout_4->addLayout(verticalLayout_7);
+
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1191, 22));
+        menubar->setGeometry(QRect(0, 0, 1191, 26));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -429,6 +474,8 @@ public:
         label_19->setText(QString());
         label_20->setText(QString());
         label_21->setText(QString());
+        label_23->setText(QCoreApplication::translate("MainWindow", "\347\224\265\351\207\217", nullptr));
+        label_24->setText(QCoreApplication::translate("MainWindow", "\344\277\241\345\217\267\345\274\272\345\272\246", nullptr));
     } // retranslateUi
 
 };

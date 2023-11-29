@@ -50,6 +50,7 @@ bool aiduProtocol::rxMsg(uint8_t *rxBuf,uint32_t rxLength,admt *admt)
         admt->global.setOperationChannelID(slave->xOpChNo);
         qDebug()<<"Operation channel:"<<slave->xOpChNo;
     }
+    qDebug()<<"data size:"<<slave->dataNumber;
     memcpy((uint8_t *)slave->data,(uint8_t *)&rxBuf[ADMT_SLAVE_OFFSET_DATA],slave->dataNumber);
     this->executeMsg(slave,admt);
     delete []slave;
@@ -101,9 +102,10 @@ bool aiduProtocol::executeMsg(Aidu_sFrame_T *slave,admt *admt)
             break;
         case aiduCom_HearBeat:
         {
-               admt->global.setBatteryPercent(slave->data[0]);
-                admt->global.setWifiStrength(slave->data[2]);
-                this->txMsg(admt,aiduCom_HearBeat);
+            qDebug()<<"Aidu command is heart beat";
+            admt->global.setBatteryPercent(slave->data[0]);
+            admt->global.setWifiStrength(slave->data[2]);
+            this->txMsg(admt,aiduCom_HearBeat);
         }
             break;
         case aiduCom_CheckChConSTA:
@@ -153,6 +155,7 @@ bool aiduProtocol::executeMsg(Aidu_sFrame_T *slave,admt *admt)
 bool aiduProtocol::txMsg(admt *admt,Aidu_command_t func)
 {
     std::vector<uint8_t> txMsg;
+    qDebug()<<"Enter tx message";
     switch(func)
     {
     case aiduCom_readConfig:
@@ -160,37 +163,40 @@ bool aiduProtocol::txMsg(admt *admt,Aidu_command_t func)
         break;
 
     case aiduCom_readInfo:  // Read multiple register
-this->makeCommPack(&txMsg,admt,aiduCom_readInfo);
+        this->makeCommPack(&txMsg,admt,aiduCom_readInfo);
         break;
 
     case aiduCom_setConfig: // Write single coli
-this->makeCommPack(&txMsg,admt,aiduCom_setConfig);
+        this->makeCommPack(&txMsg,admt,aiduCom_setConfig);
         break;
 
     case aiduCom_HearBeat:  // Sample data
-this->makeCommPack(&txMsg,admt,aiduCom_HearBeat);
+        qDebug()<<"Enter tx message heart beat";
+        this->makeCommPack(&txMsg,admt,aiduCom_HearBeat);
         break;
 
     case aiduCom_CheckChConSTA:
-this->makeCommPack(&txMsg,admt,aiduCom_CheckChConSTA);
+        this->makeCommPack(&txMsg,admt,aiduCom_CheckChConSTA);
         break;
 
     case aiduCom_RefreshChNum:
-this->makeCommPack(&txMsg,admt,aiduCom_RefreshChNum);
+        this->makeCommPack(&txMsg,admt,aiduCom_RefreshChNum);
         break;
 
     case aiduCom_setMeasure:
-this->makeCommPack(&txMsg,admt,aiduCom_setMeasure);
+        this->makeCommPack(&txMsg,admt,aiduCom_setMeasure);
         break;
 
     case aiduCom_RepeatChData:
-this->makeCommPack(&txMsg,admt,aiduCom_RepeatChData);
+        this->makeCommPack(&txMsg,admt,aiduCom_RepeatChData);
         break;
 
     case aiduCom_upMeasureData:
-this->makeCommPack(&txMsg,admt,aiduCom_upMeasureData);
+        this->makeCommPack(&txMsg,admt,aiduCom_upMeasureData);
         break;
     }
+
+    qDebug()<<"file:"<<__FILE__<<"line-"<<__LINE__<<"message length:"<<txMsg.size();
     this->send(&txMsg[0], txMsg.size());
     return true;
 }
@@ -206,39 +212,46 @@ void aiduProtocol::makeCommPack(std::vector<uint8_t> *vec,admt *admt,Aidu_comman
     uint16_t crc = 0xFFFF;
     std::vector<uint8_t> vecDataTemp;
     Aidu_mFrame_T master;
-
+    qDebug()<<"file:"<<__FILE__<<"line-"<<__LINE__;
     master.beginByte = 0xAA;
     master.DevSerialNum = admt->global.getDevSerialNum();
     master.xTotalChannelNum = admt->global.getTotalChannelNumber();
+    qDebug()<<"file:"<<__FILE__<<"line-"<<__LINE__;
     if(admt->global.getMeasureMethod()==0)
     {
-        master.sampleChNum=admt->global.getTotalChannelNumber();
+//        master.sampleChNum=admt->global.getTotalChannelNumber();
     }
     else
     {
-        master.sampleChNum=1;
+//        master.sampleChNum=1;
     }
+    qDebug()<<"file:"<<__FILE__<<"line-"<<__LINE__;
     if(func != aiduCom_RefreshChNum)
     {
         master.xOpChNo=admt->global.getOperationChannelID();
     }
+    qDebug()<<"file:"<<__FILE__<<"line-"<<__LINE__;
     if(admt->global.getTotalChannelNumber()==1)
     {
         master.xOpChNo=1;
     }
+    qDebug()<<"file:"<<__FILE__<<"line-"<<__LINE__;
     master.xMeaMethod = admt->global.getMeasureMethod();
     master.xSlaveType =admt->global.getSlaveType();
     master.command1=func;
+    qDebug()<<"file:"<<__FILE__<<"line-"<<__LINE__;
     if(master.command1==aiduCom_upMeasureData)
     {
         master.command1=aiduCom_setMeasure;
     }
+    qDebug()<<"file:"<<__FILE__<<"line-"<<__LINE__;
     master.command2 = 0;
     master.command3 = 0;
     master.command4 = 0;
     master.command5 = 0;
     master.midByte = 0xA5;
 
+    qDebug()<<"file:"<<__FILE__<<"line-"<<__LINE__;
     switch (func) {
     case aiduCom_readConfig:
     {
@@ -263,6 +276,7 @@ void aiduProtocol::makeCommPack(std::vector<uint8_t> *vec,admt *admt,Aidu_comman
         break;
     case aiduCom_HearBeat:
     {
+        qDebug()<<"file:"<<__FILE__<<"line-"<<__LINE__;
         qDebug()<<"Send heart beat to "<<hex<<admt->global.getDevSerialNum();
     }
         break;
@@ -313,7 +327,6 @@ void aiduProtocol::makeCommPack(std::vector<uint8_t> *vec,admt *admt,Aidu_comman
  */
 void aiduProtocol::send(uint8_t *buf, uint32_t len)
 {
-    QByteArray mydata((char*)buf,len);
-    this->socket->write(mydata);
+    this->socket->write((char*)buf,len);
 }
 
