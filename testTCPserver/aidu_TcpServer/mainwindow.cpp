@@ -12,7 +12,6 @@ MainWindow::MainWindow(QMainWindow *parent)
     server->listen(QHostAddress::AnyIPv4,TCP_PORT);
     ui->portEdit->setText(QString (server->serverPort()));
 
-    connect(server,&QTcpServer::newConnection,this,&MainWindow::newClientHandler);
 }
 
 MainWindow::~MainWindow()
@@ -43,49 +42,22 @@ void MainWindow::get_local_Ip()
 //    qDebug()<<"IP为："<<ipAddress;
 }
 
-void MainWindow::newClientHandler()
-{
-    //建立TCP连接
-    QTcpSocket *socket = server->nextPendingConnection();
-    mySocket = socket;
-    socket->peerAddress();//获取客户端地址
-    socket->peerPort();//获取客户端端口号
-    get_local_Ip();
+//void MainWindow::newClientHandler()
+//{
+//    //建立TCP连接
+//    QTcpSocket *socket = server->nextPendingConnection();
+//    mySocket = socket;
+//    socket->peerAddress();//获取客户端地址
+//    socket->peerPort();//获取客户端端口号
+//    get_local_Ip();
 
-    ui->ipEdit->setText(socket->peerAddress().toString());
-    ui->portEdit->setText(QString::number(socket->peerPort()));
-//    connect(socket,&QTcpSocket::readyRead,this,&Widget::tcpServerRead);
+//    ui->ipEdit->setText(socket->peerAddress().toString());
+//    ui->portEdit->setText(QString::number(socket->peerPort()));
+////    connect(socket,&QTcpSocket::readyRead,this,&Widget::tcpServerRead);
 
-    //启动线程
-    qDebug()<<"newClient creadted";
-    mythread *t = new mythread(socket);
-    t->start();  //开始线程
-    connect(t,&mythread::sendToWindow,this,&MainWindow::threadSlot);
-}
-
-void MainWindow::threadSlot(QByteArray b)
-{
-    ui->clientMsgRcvEdit->setText(QString(b.toHex()));
-}
-
-void MainWindow::on_textMsgSendButton_clicked()
-{
-    QByteArray ba;
-    ba.append(ui->textMsgSendEdit->text().toLocal8Bit());
-    qDebug()<<ba;
-    ba.append("\r\n");
-    mySocket->write(ba);
-}
-
-
-void MainWindow::on_clientMsgClearButton_clicked()
-{
-    ui->clientMsgRcvEdit->clear();
-}
-
-
-void MainWindow::on_textMsgClearButton_clicked()
-{
-    ui->clientMsgRcvEdit->clear();
-}
-
+//    //启动线程
+//    qDebug()<<"newClient creadted";
+//    mythread *t = new mythread(socket);
+//    t->start();  //开始线程
+//    connect(t,&mythread::sendToWindow,this,&MainWindow::threadSlot);
+//}

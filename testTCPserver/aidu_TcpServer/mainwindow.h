@@ -26,15 +26,6 @@ public:
     void get_local_Ip();
     ~MainWindow();
 private slots:
-    void newClientHandler();
-    void threadSlot(QByteArray b);
-//    void tcpRead();
-
-    void on_textMsgSendButton_clicked();
-
-    void on_clientMsgClearButton_clicked();
-
-    void on_textMsgClearButton_clicked();
 
 private:
     Ui::MainWindow *ui;
