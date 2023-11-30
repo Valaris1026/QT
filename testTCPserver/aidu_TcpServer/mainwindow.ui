@@ -36,7 +36,7 @@
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>130</y>
+      <y>110</y>
       <width>331</width>
       <height>171</height>
      </rect>
@@ -52,7 +52,7 @@
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>110</y>
+      <y>90</y>
       <width>69</width>
       <height>20</height>
      </rect>
@@ -60,12 +60,15 @@
     <property name="text">
      <string>客户端消息</string>
     </property>
+    <property name="buddy">
+     <cstring>clientMsgRcvEdit</cstring>
+    </property>
    </widget>
    <widget class="QPushButton" name="textMsgSendButton">
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>580</y>
+      <y>560</y>
       <width>93</width>
       <height>29</height>
      </rect>
@@ -78,7 +81,7 @@
     <property name="geometry">
      <rect>
       <x>430</x>
-      <y>580</y>
+      <y>560</y>
       <width>93</width>
       <height>29</height>
      </rect>
@@ -91,7 +94,7 @@
     <property name="geometry">
      <rect>
       <x>430</x>
-      <y>310</y>
+      <y>290</y>
       <width>93</width>
       <height>29</height>
      </rect>
@@ -104,7 +107,7 @@
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>360</y>
+      <y>340</y>
       <width>69</width>
       <height>20</height>
      </rect>
@@ -112,12 +115,15 @@
     <property name="text">
      <string>发送消息</string>
     </property>
+    <property name="buddy">
+     <cstring>textMsgSendEdit</cstring>
+    </property>
    </widget>
    <widget class="QLineEdit" name="textMsgSendEdit">
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>380</y>
+      <y>360</y>
       <width>331</width>
       <height>191</height>
      </rect>
@@ -126,81 +132,11 @@
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
     </property>
    </widget>
-   <widget class="QWidget" name="layoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>110</y>
-      <width>121</width>
-      <height>117</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <widget class="QLabel" name="label_6">
-       <property name="font">
-        <font>
-         <pointsize>15</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;客户端地址&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="ipEdit"/>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_7">
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>客户端端口</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="portEdit"/>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>240</y>
-      <width>121</width>
-      <height>411</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_10">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>220</y>
-      <width>119</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>连接列表</string>
-    </property>
-   </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>70</y>
+      <x>650</x>
+      <y>500</y>
       <width>171</width>
       <height>28</height>
      </rect>
@@ -221,50 +157,8 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>10</y>
-      <width>121</width>
-      <height>117</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_3">
-     <item>
-      <widget class="QLabel" name="label_8">
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>服务器地址</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="serverAddressEdit"/>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_9">
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>服务器端口</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="serverPortEdit"/>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>70</y>
+      <x>450</x>
+      <y>60</y>
       <width>194</width>
       <height>27</height>
      </rect>
@@ -274,6 +168,9 @@
       <widget class="QLabel" name="label_22">
        <property name="text">
         <string>设备名称</string>
+       </property>
+       <property name="buddy">
+        <cstring>lineEdit_14</cstring>
        </property>
       </widget>
      </item>
@@ -289,7 +186,7 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>530</x>
+      <x>580</x>
       <y>130</y>
       <width>443</width>
       <height>191</height>
@@ -305,12 +202,18 @@
            <property name="text">
             <string>设备编号</string>
            </property>
+           <property name="buddy">
+            <cstring>deviceSerialNumberEdit</cstring>
+           </property>
           </widget>
          </item>
          <item>
           <widget class="QLabel" name="label_11">
            <property name="text">
             <string>总通道数</string>
+           </property>
+           <property name="buddy">
+            <cstring>totalChannelNumberEdit</cstring>
            </property>
           </widget>
          </item>
@@ -319,12 +222,18 @@
            <property name="text">
             <string>采样通道数量</string>
            </property>
+           <property name="buddy">
+            <cstring>sampleChannelNumberEdit</cstring>
+           </property>
           </widget>
          </item>
          <item>
           <widget class="QLabel" name="label_14">
            <property name="text">
             <string>通道操作ID</string>
+           </property>
+           <property name="buddy">
+            <cstring>operateChannelIDEdit</cstring>
            </property>
           </widget>
          </item>
@@ -333,12 +242,18 @@
            <property name="text">
             <string>测量方式</string>
            </property>
+           <property name="buddy">
+            <cstring>measureMethodEidt</cstring>
+           </property>
           </widget>
          </item>
          <item>
           <widget class="QLabel" name="label_13">
            <property name="text">
             <string>从机采样型号</string>
+           </property>
+           <property name="buddy">
+            <cstring>slaveSampleTypeEdit</cstring>
            </property>
           </widget>
          </item>
@@ -377,12 +292,18 @@
            <property name="text">
             <string>命令</string>
            </property>
+           <property name="buddy">
+            <cstring>commandEdit</cstring>
+           </property>
           </widget>
          </item>
          <item>
           <widget class="QLabel" name="label_17">
            <property name="text">
             <string>参数字节数</string>
+           </property>
+           <property name="buddy">
+            <cstring>paramByteSizeEdit</cstring>
            </property>
           </widget>
          </item>
@@ -442,7 +363,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>650</x>
@@ -482,6 +403,146 @@
      </item>
     </layout>
    </widget>
+   <widget class="QTabWidget" name="connectManageWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>161</width>
+      <height>531</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="server">
+     <attribute name="title">
+      <string>Tab 1</string>
+     </attribute>
+     <widget class="QWidget" name="">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>134</width>
+        <height>47</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="serverlabel">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>服务器地址</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox_2"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>60</y>
+        <width>134</width>
+        <height>46</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_9">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>服务器端口</string>
+         </property>
+         <property name="buddy">
+          <cstring>serverPortEdit</cstring>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="serverPortEdit"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="device">
+     <attribute name="title">
+      <string>Tab 2</string>
+     </attribute>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>350</y>
+      <width>134</width>
+      <height>46</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_9">
+     <item>
+      <widget class="QLabel" name="label_6">
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;客户端地址&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="buddy">
+        <cstring>ipEdit</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="ipEdit"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>410</y>
+      <width>134</width>
+      <height>46</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_10">
+     <item>
+      <widget class="QLabel" name="label_7">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>客户端端口</string>
+       </property>
+       <property name="buddy">
+        <cstring>portEdit</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="portEdit"/>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -489,7 +550,7 @@
      <x>0</x>
      <y>0</y>
      <width>1191</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

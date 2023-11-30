@@ -10,8 +10,6 @@ MainWindow::MainWindow(QMainWindow *parent)
     server = new QTcpServer;
 
     server->listen(QHostAddress::AnyIPv4,TCP_PORT);
-
-    ui->serverAddressEdit->setText(server->serverAddress().toString());
     ui->portEdit->setText(QString (server->serverPort()));
 
     connect(server,&QTcpServer::newConnection,this,&MainWindow::newClientHandler);
